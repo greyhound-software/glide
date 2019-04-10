@@ -75,7 +75,7 @@ func CustomRename(o, n string) error {
 		cmd := exec.Command("robocopy.exe", o, n)
 		output, err := cmd.CombinedOutput()
 		if err != nil {
-			return fmt.Errorf("Error moving files: %s. output: %s", err, output)
+			return fmt.Errorf("Error moving files: %s. output: %s, source: %s, target: %s", err, output, o, n)
 		}
 
 		return nil
