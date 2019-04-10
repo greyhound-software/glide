@@ -84,7 +84,7 @@ func CustomRename(o, n string) error {
 		output, err2 := cmd.CombinedOutput()
 		msg.Debug("Detected Windows Subsystem for Linux. Removing files using subsystem command")
 		if err2 != nil {
-			return fmt.Errorf("Error moving files: %s. output: %s", err2, output)
+			return fmt.Errorf("Error moving files: %s. output: %s, using fallback", err2, output)
 		}
 
 		return nil
